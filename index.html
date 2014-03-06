@@ -1,0 +1,172 @@
+<!doctype html>
+<!--[if lte IE 8]><html class="lteie8"><![endif]-->
+<!--[if gt IE 8]><!--><html><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>blocks</title>
+	<meta name="viewport" content="initial-scale=1"/>
+	<link rel="stylesheet" media="screen" href="css/screen.css" >
+	<script src="js/app.js"></script>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script><!--for tabs-->
+ 	<script src="js/jquery.tools.min.js"></script>
+ 	<script src="js/jquery.tools.min.tabs.js"></script><!--for tabs-->
+ 	<script src="js/common.js"></script>
+</head>
+<body>
+	<div class="block">
+		<!--BEGIN nav-->
+		<ul class="nav">
+			<li class="nav__main"><a class="main-link" href="#">Файл</a>
+				<ul class="nav__second">
+					<li class="nav__second-item"><a class="item-link" href="#">Новый</a></li>
+					<li class="nav__second-item"><a class="item-link" href="#">Открыть</a></li>
+					<li class="nav__second-item"><a class="item-link" href="#">Сохранить</a></li>
+					<li class="nav__second-item"><a class="item-link" href="#">Закрыть</a></li>
+				</ul>
+			</li>
+			<li class="nav__main"><a class="main-link" href="#">Справка</a>
+				<ul class="nav__second">
+					<li class="nav__second-item"><a class="item-link" href="#">О нас</a></li>
+					<li class="nav__second-item"><a class="item-link" href="#">Контакты</a></li>
+					<li class="nav__second-item"><a class="item-link" href="#">Выход</a></li>
+					<li class="nav__second-item"><a class="item-link" href="#">Вход</a></li>
+				</ul>
+			</li>
+			<li class="nav__main"><a class="main-link" href="#">Доставка</a>
+				<ul class="nav__second">
+					<li class="nav__second-item"><a class="item-link" href="#">О них</a></li>
+					<li class="nav__second-item"><a class="item-link" href="#">Когда</a></li>
+					<li class="nav__second-item"><a class="item-link" href="#">Вперед</a></li>
+					<li class="nav__second-item"><a class="item-link" href="#">Вааааааааал</a></li>
+				</ul>
+			</li>
+		</ul>
+		<!--/.nav-->
+	</div>
+	<div class="block">
+		<!--BEGIN slider-->
+		<div id="slider">
+			<input class="bar" type="range" id="rangeinput" value="50" onchange="rangevalue.value=value"/>
+			<span class="highlight"></span>
+			<output id="rangevalue">50</output>
+		</div>
+		<!--/.slider-->
+	</div>
+	<div class="block">
+		<!--BEGIN reg-->
+		<div class="reg">  
+  		<div class="form">
+		    <form>
+		      <div class="form__roll">
+		        <label class="form__roll-name" for="1">Имя</label>
+		        <input type="text" name="name" id="1" required>
+		        <span class="form__roll-item"></span>
+		      </div>
+		      <div class="form__roll">
+		        <label class="form__roll-name" for="2">Фамилия</label>
+		        <input type="text" name="lastname" id="2" required>
+		        <span class="form__roll-item"></span>
+		      </div>
+		      <div class="form__roll">
+		        <label class="form__roll-name" for="3">Город</label>
+		        <input type="text" name="city" id="3" required>
+		        <span class="form__roll-item"></span>
+		      </div>
+		      <div class="email form__roll">
+		        <label class="form__roll-name" for="4">Эл. почта</label>
+		        <input type="email" name="email" id="4" required>
+		        <span class="form__roll-item"></span>
+		      </div>
+		      <div class="form__roll">
+		        <label class="form__roll-name" for="5">Пароль</label>
+		        <input type="password" name="password" id="5">
+		      </div>
+		      <div class="form__roll">
+		        <label class="form__roll-name" for="6">Повторите</label>
+		        <input type="password" name="repeat" id="6" required>
+		        <span class="form__roll-item"></span>
+		      </div>
+		      <label class="form__roll-name form__roll-headline" for="7">Введите число с картинки</label>
+		      <div class="form__roll">
+		        <img class="form__roll-img" src="#" alt="картинка">
+		        <input type="number"  min="10000" max="99999" step="1" required id="7">
+		        <span class="form__roll-item"></span>
+		        <span class="form__roll-wrong">Неправильное&nbsp;число</span>
+		      </div>
+		    </form>
+  		</div>
+  		<div class="act">
+    		<button class="btn">Зарегистрироваться
+    		</button>
+  		</div>
+		</div>
+		<!--/.reg-->
+	</div>
+	<div class="block">
+		<!--BEGIN tabs-->
+		<ul class="tabs">
+			<li><a href="#">Tab 1</a></li>
+			<li><a href="#">Tab 2</a></li>
+			<li><a href="#">Tab 3</a></li>
+		</ul>
+		<!--/.tabs-->
+		<!--BEGIN panes-->
+		<div class="panes">
+			<div>First tab content. Tab contents are called "panes"</div>
+			<div>Second tab content</div>
+			<div>Third tab content</div>
+		</div>
+		<!--/.panes-->
+	</div>
+	<div class="block">
+		<!--BEGIN horse-->
+		<table class="horse">
+    	<tbody>
+        <tr>
+            <td class="horse__item">
+                <input type="checkbox" id="cell-1">
+                <label for="cell-1"></label>
+            </td>
+            <td class="horse__item">
+                <input type="checkbox" id="cell-2">
+                <label for="cell-2"></label>
+            </td>
+            <td class="horse__item">
+                <input type="checkbox" id="cell-3">
+                <label for="cell-3"></label>
+            </td>
+        </tr>
+        <tr>
+            <td class="horse__item">
+                <input type="checkbox" id="cell-4">
+                <label for="cell-4"></label>
+            </td>
+            <td class="horse__item">
+                <input type="checkbox" id="cell-5">
+                <label for="cell-5"></label>
+            </td>
+            <td class="horse__item">
+                <input type="checkbox" id="cell-6">
+                <label for="cell-6"></label>
+            </td>
+        </tr>
+        <tr>
+            <td class="horse__item">
+                <input type="checkbox" id="cell-7">
+                <label for="cell-7"></label>
+            </td>
+            <td class="horse__item">
+                <input type="checkbox" id="cell-8">
+                <label for="cell-8"></label>
+            </td>
+            <td class="horse__item">
+                <input type="checkbox" id="cell-9">
+                <label for="cell-9"></label>
+            </td>
+        </tr>
+    	</tbody>
+		</table>
+		<!--/.horse-->
+	</div>
+</body>
+</html>
