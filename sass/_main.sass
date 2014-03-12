@@ -1,9 +1,13 @@
+body
+	background: #aaa
 .block
+	background: #FFF 
 	padding: 20px
 	margin: 5px
 	border: 1px solid 
 	display: block
 	+border-radius (5px)
+	text-align: center
 /*----------nav-----------------------------------------*/
 .nav//ul
 	list-style: none
@@ -43,82 +47,22 @@
 .main-link, .item-link
 	display: inline-block
 	padding: 5px
-/*-----slider--------------------------------------------------------*/
-#slider  
-	width: 400px 
-	height: 17px 
-	position: relative 
-	background: #10171D 
-	+border-radius(40px)
-	+box-shadow(inset 0px 0px 1px 1px rgba(0, 0, 0, 0.9), 0px 1px 1px 0px rgba(255, 255, 255, 0.13)) 
-#slider .bar  
-	width: 388px 
-	height: 5px 
-	position: relative 
-	top: -4px 
-	left: 4px 	
-	background: #1d2e38 
-	@include background-image(linear-gradient(left, #1d2e38 0%,#2b4254 50%,#2b4254 100%)) 	
-	+border-radius(40px) 
-#slider .highlight  
-	height: 2px 
-	position: absolute 
-	width: 388px 
-	top: 6px 
-	left: 6px 
-	+border-radius(40px) 
-	background: rgba(255, 255, 255, 0.25) 
-input[type="range"]  
-	-webkit-appearance: none 
-	background-color: black 
-	height: 2px 
-input[type="range"]::-webkit-slider-thumb  
-	-webkit-appearance: none 
-	position: relative 
-	top: 0px 
-	z-index: 1 
-	width: 11px 
-	height: 11px 
-	cursor: pointer  
-	+box-shadow(0px 6px 5px 0px rgba(0,0,0,0.6))  
-	+border-radius(40px) 
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ebf1f6), color-stop(50%,#abd3ee), color-stop(51%,#89c3eb), color-stop(100%,#d5ebfb)) 
-input[type="range"]:hover ~ #rangevalue,input[type="range"]:active ~ #rangevalue  
-	opacity: 1 
-	top: -75px 
-/* Tool Tip */
-#rangevalue  
-	color: white 
-	font-size: 10px 
-	text-align: center 
-	font-family:  Arial, sans-serif 
-	display: block 
-	color: #fff 
-	margin: 20px 0 
-	position: relative 
-	left: 44.5% 
-	padding: 6px 12px 
-	border: 1px solid black  
-	+box-shadow(inset 0px 1px 1px 0px rgba(255, 255, 255, 0.2), 0px 2px 4px 0px rgba(0,0,0,0.4)) 
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#222931), color-stop(100%,#181D21))  
-	+border-radius(20px) 
-	width: 18px 
-	opacity: 0 
-	+transition(0.4s) 
-	top: -95px 
 /*-----reg--------------------------------------------------------------------------------*/	
 $reg__bord: #666
-$reg__bg: #f8bb46
+$reg__bg: #ccc//#f8bb46
 $reg__text: #000
 $reg__text-item: #fff
 $reg__yes: #008000
 $reg__no: #c00
 $reg__form: #ddd
 .reg
-	width: 600px
-	margin: 20px auto
+	+clr
+	width: 400px
 	padding: 10px 
+	font-family: cambria 
+	display: inline-block
 	.form, .act
+		text-align: left
 		+border-radius (5px)
 		background: $reg__bg
 		border: 1px $reg__bord solid
@@ -127,7 +71,6 @@ $reg__form: #ddd
 	.form 
 		color: $reg__text
 		padding-bottom: 10px
-		min-width: 500px
 		margin: 0 auto
 		padding: 0 0 20px 20px
 		h4 
@@ -138,29 +81,46 @@ $reg__form: #ddd
 			position: relative
 			line-height: 20px
 			min-width: 500px
-			margin: 10px auto 10px auto  
+			margin: 10px auto 10px auto
 		.form__roll-name
 			width: 100px
 			display: inline-block
+			cursor: pointer
 		.form__roll-headline
 			width: 100%
-			display: block  
+			display: block
 		.form__roll-img 
-			width: 100px
-			height: 50px
+			width: 80px
+			height: 40px
+			margin: 0 10px 
 			vertical-align: middle
 			+border-radius(5px)
 			border: 1px solid $reg__bord
 			+box
 			display: inline-block
 	input 
-		border: 1px $reg__bord solid
+		border: 1px solid
 		background: $reg__form
 		@include background-image(linear-gradient(bottom, $reg__form 0%, $reg__form+#989898 50%, $reg__form 100%))
-		width: 220px
+		min-width: 200px
 		height: 20
 		padding-left: 5px
-		+border-radius (3px)  
+		+border-radius (3px)
+		transition: 0.2s 
+		&:focus,&:invalid,&:valid
+			outline: none
+		&:focus 
+			border-color: $reg__yes
+			+box-shadow (0px 0px 3px $reg__yes)
+			+transform (scale(1.05))
+			background: #fff
+			font-weight: bold 
+		&:invalid
+			border-color: $reg__no	
+			+box-shadow (0px 0px 3px $reg__no)
+			color: $reg__no
+		&:valid
+			border-color: $reg__yes
 	form 
 		h4 
 			margin-top: 35px
@@ -199,14 +159,13 @@ $reg__form: #ddd
 		/*-----left-item hidden span----------------------*/
 	input:required + span + .form__roll-wrong
 		color: $reg__no
-		display: inline-block 
-		margin-left: 10px   
+		display: block 
+		margin-left: 130px 
 	input:valid + span+ .form__roll-wrong
-		display: none
+		opacity: 0
 	/*-----act-----------------------------*/
 	.act 
 		text-align: center
-		min-width: 500px
 		margin-top: 7px
 		padding: 20px
 	/*-----btn----------------------------------*/
@@ -236,6 +195,10 @@ $reg__form: #ddd
 /*-----tabs-----------------------------------------------------------*/			
 $tab__bg: #f00
 .tabs
+	display: inline-block
+	width: 465px
+	text-align: left
+.tabs__tab
 	overflow: hidden
 	list-style: none
 	li
@@ -246,7 +209,7 @@ $tab__bg: #f00
 		width: 150px 
 		height: 30px
 		overflow: hidden
-		+box   
+		+box 
 		a
 			vertical-align: sub
 			text-decoration: none
@@ -266,21 +229,30 @@ $tab__bg: #f00
 			&:active	
 				+transform (scale(0.95))
 				+border-radius (15px)
-.panes
-	div 
+.tabs__panes
+	.tabs__panes-cont 
+		min-height: 200px
 		width: 460px
 		margin: 0 auto
-		background: #c6c6c6
+		background: $tab__bg
 		+g($tab__bg, #fff )
 		display: inline-block
-		padding: 50px
+		padding: 20px
 		+box
-		+box-shadow(0px 1px 1px #000)
+		+box-shadow(0px 1px 1px rgba(0, 0, 0, 0.3))
 		+border-radius( 0 0 10px 10px)
+		span
+			display: block
+			+border-radius (10px)
+			padding: 10px
+			display: inline-block
+			background: #FFF 
+			background: rgba(255,255,255,0.15) 			 
 /*-----horse------------------------------------------*/
 .horse 
 	border-collapse: collapse
 	width: 200px
+	display: inline-block
 	.horse__item
 		border: 1px solid #000
 		width: 55px
@@ -306,5 +278,82 @@ $tab__bg: #f00
 		input:checked + label 
 			opacity: 1
 			+transform (scale(1))
-
+/*-----accord--------------------------------------------------*/
+.accord
+	width: 400px
+	text-align: left
+	display: inline-block
+	a
+		color: #333
+		text-decoration: none
+	label
+		font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif
+		padding: 5px 20px
+		position: relative
+		z-index: 20
+		display: block
+		height: 30px
+		cursor: pointer
+		color: #777
+		+text-shadow (1px 1px 1px rgba(255, 255, 255, 0.8))
+		line-height: 33px
+		font-size: 19px
+		background: #ffffff
+		@include background-image(linear-gradient(top, #fff 1%, #eaeaea 100%))
+		+box-shadow (0px 0px 0px 1px rgba(155,155,155,0.3), 1px 0px 0px 0px rgba(255,255,255,0.9) inset, 0px 2px 2px rgba(0,0,0,0.1))
+		&:hover
+			background: #fff
+	input:checked + label
+		background: #c6e1ec
+		color: #3d7489
+		+text-shadow (0px 1px 1px rgba(255, 255, 255, 0.6))
+		+box-shadow (0px 0px 0px 1px rgba(155, 155, 155, 0.3), 0px 2px 2px rgba(0, 0, 0, 0.1))
+		&:hover
+			background: #c6e1ec
+			color: #3d7489
+			+text-shadow (0px 1px 1px rgba(255, 255, 255, 0.6))
+			+box-shadow (0px 0px 0px 1px rgba(155, 155, 155, 0.3), 0px 2px 2px rgba(0, 0, 0, 0.1))
+	label:hover:after
+		content: ''
+		position: absolute
+		width: 24px
+		height: 24px
+		right: 13px
+		top: 7px
+		background: transparent url(../img/arrow_down.png) no-repeat center center
+	input
+		&:checked + label:hover:after
+			content: ''
+			position: absolute
+			width: 24px
+			height: 24px
+			right: 13px
+			top: 7px
+			background: transparent url(../img/arrow_down.png) no-repeat center center
+			background-image: url(../img/arrow_up.png)
+		display: none
+	article
+		background: rgba(255, 255, 255, 0.5)
+		margin-top: -1px
+		overflow: hidden
+		height: 0px
+		position: relative
+		z-index: 10
+		transition: height 0.3s ease-in-out, box-shadow 0.6s linear
+		p
+			font-style: italic
+			color: #777
+			line-height: 23px
+			font-size: 14px
+			padding: 20px
+			text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8)
+	input:checked ~ article
+		transition: height 0.5s ease-in-out, box-shadow 0.1s linear
+		box-shadow: 0px 0px 0px 1px rgba(155, 155, 155, 0.3)
+		&.ac-small
+			height: 140px
+		&.ac-medium
+			height: 180px
+		&.ac-large
+			height: 230px 
 		

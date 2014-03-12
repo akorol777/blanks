@@ -44,15 +44,6 @@
 		<!--/.nav-->
 	</div>
 	<div class="block">
-		<!--BEGIN slider-->
-		<div id="slider">
-			<input class="bar" type="range" id="rangeinput" value="50" onchange="rangevalue.value=value"/>
-			<span class="highlight"></span>
-			<output id="rangevalue">50</output>
-		</div>
-		<!--/.slider-->
-	</div>
-	<div class="block">
 		<!--BEGIN reg-->
 		<div class="reg">  
   		<div class="form">
@@ -79,7 +70,8 @@
 		      </div>
 		      <div class="form__roll">
 		        <label class="form__roll-name" for="5">Пароль</label>
-		        <input type="password" name="password" id="5">
+		        <input type="password" name="password" id="5" required>
+		        <span class="form__roll-item"></span>
 		      </div>
 		      <div class="form__roll">
 		        <label class="form__roll-name" for="6">Повторите</label>
@@ -103,20 +95,25 @@
 		<!--/.reg-->
 	</div>
 	<div class="block">
+		
+	<div class="tabs">
 		<!--BEGIN tabs-->
-		<ul class="tabs">
+		<ul class="tabs__tab">
 			<li><a href="#">Tab 1</a></li>
 			<li><a href="#">Tab 2</a></li>
 			<li><a href="#">Tab 3</a></li>
 		</ul>
 		<!--/.tabs-->
 		<!--BEGIN panes-->
-		<div class="panes">
-			<div>First tab content. Tab contents are called "panes"</div>
-			<div>Second tab content</div>
-			<div>Third tab content</div>
+		<div class="tabs__panes">
+			<div class="tabs__panes-cont"><span>First tab content. Tab contents are called "panes"  Tab contents are called "panes"Tab contents are called "panes"Tab contents are called "panes" Tab contents are called "panes "Tab contents are called "panes"Tab contents are called "panes"Tab contents are called "panes"Tab contents are called "panes"Tab contents are called "panes"</span></div>
+			<div class="tabs__panes-cont"><span>Second tab content tab cotab cotab cotab cotab cotab cotab cotab cotab cotab cotab cotab co</span></div>
+			<div class="tabs__panes-cont"><span>Third tab content tab  tab  tab  tab  tab  tab  tab  tab  tab  tab  tab  tab  tab  tab  tab  tab  tab  tab </span></div>
 		</div>
 		<!--/.panes-->
+	</div>	
+
+
 	</div>
 	<div class="block">
 		<!--BEGIN horse-->
@@ -167,6 +164,42 @@
     	</tbody>
 		</table>
 		<!--/.horse-->
+	</div>
+	<div class="block">
+		
+	 		<!--BEGIN accord-->
+			<section class="accord">
+				<div>
+					<input id="ac-1" name="accordion-1" type="checkbox" />
+					<label for="ac-1">Главная</label>
+					<article class="ac-small">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in justo nisi. Donec pulvinar erat a enim scelerisque, non convallis diam vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc at odio nisl. Aenean non mauris non neque fermentum tempor. Aliquam euismod libero ultricies adipiscing vulputate. Vivamus sit amet posuere purus, non euismod neque.</p>
+					</article>
+				</div>
+				<div>
+					<input id="ac-2" name="accordion-1" type="checkbox" />
+					<label for="ac-2">Об авторе</label>
+					<article class="ac-medium">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in justo nisi. Donec pulvinar erat a enim scelerisque, non convallis diam vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc at odio nisl. Aenean non mauris non neque fermentum tempor. Aliquam euismod libero ultricies adipiscing vulputate. Vivamus sit amet posuere purus, non euismod neque.</p>
+					</article>
+				</div>
+				<div>
+					<input id="ac-3" name="accordion-1" type="checkbox" />
+					<label for="ac-3">Статьи</label>
+					<article class="ac-large">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in justo nisi. Donec pulvinar erat a enim scelerisque, non convallis diam vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc at odio nisl. Aenean non mauris non neque fermentum tempor. Aliquam euismod libero ultricies adipiscing vulputate. Vivamus sit amet posuere purus, non euismod neque.</p>
+					</article>
+				</div>
+				<div>
+					<input id="ac-4" name="accordion-1" type="checkbox" />
+					<label for="ac-4">Контакты</label>
+					<article class="ac-large">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in justo nisi. Donec pulvinar erat a enim scelerisque, non convallis diam vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc at odio nisl. Aenean non mauris non neque fermentum tempor. Aliquam euismod libero ultricies adipiscing vulputate. Vivamus sit amet posuere purus, non euismod neque.</p>
+					</article>
+				</div>
+			</section>
+			<!--/.accord-->
+
 	</div>
 </body>
 </html>

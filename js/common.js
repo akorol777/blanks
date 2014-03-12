@@ -1,6 +1,6 @@
 /*-----tabs-----------------------------------------------*/
 $(document).ready(function() {
-	$("ul.tabs").tabs("div.panes > div");
+	$("ul.tabs__tab").tabs("div.tabs__panes > div");
 });
 
 
